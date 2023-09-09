@@ -6,3 +6,4 @@ Link de primer montaje según video suministrado por el docente, para ESP32: htt
 Link de segundo montaje según video suministrado por el docente, timer para ESP32: https://wokwi.com/projects/374806151014067201
 Link de tercer montaje según video suministrado por el docente, encendido alterno de led con pines del ESP32: https://wokwi.com/projects/374806508898304001
 Link con lector analógico de voltaje en la ESP32: https://wokwi.com/projects/375362133797996545
+Link de lector de boton de encendido de led con ESP32: https://wokwi.com/projects/375363744700224513
