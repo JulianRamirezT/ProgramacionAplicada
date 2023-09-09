@@ -2,8 +2,6 @@ import random
 import csv
 
 filename = "randomNumbers.csv"
-fields=[]
-rows=[]
 
 
 with open(filename,'w', newline='') as csvfile:
