@@ -1,4 +1,4 @@
-En esta sección se busca la aplicación de conceptos de programación para la immplementación en microcontroladores, especificamente micrPython
+En esta sección se busca la aplicación de conceptos de programación para la immplementación en microcontroladores, especificamente micrPython en ESP32
 
 Link de encendido de un led del MuC ESP32: https://wokwi.com/projects/373084002720757761
 Link de encendido de varios leds, usando pines de salida del ESP32: https://wokwi.com/projects/373152493388653569
