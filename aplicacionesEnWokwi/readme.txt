@@ -5,3 +5,4 @@ Link de encendido de varios leds, usando pines de salida del ESP32: https://wokw
 Link de primer montaje según video suministrado por el docente, para ESP32: https://wokwi.com/projects/374802236300205057
 Link de segundo montaje según video suministrado por el docente, timer para ESP32: https://wokwi.com/projects/374806151014067201
 Link de tercer montaje según video suministrado por el docente, encendido alterno de led con pines del ESP32: https://wokwi.com/projects/374806508898304001
+Link con lector analógico de voltaje en la ESP32: https://wokwi.com/projects/375362133797996545
