@@ -1,99 +1,120 @@
-sensors =  {"living room": 21, "kitchen": 23, "bedroom": 20, "pantry": 22}
-num_cameras = {"backyard": 6,  "garage": 2, "driveway": 1}
+# #### Get A Key
+# #you can access the values in it by providing the key:
 
-print(sensors)
-print(num_cameras)
-translations = {"mountain": "orod", "bread": "bass", "friend": "mellon", "horse": "roch" }
-print(translations)
+# building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}
+# print(building_heights["Burj Khalifa"]) # Prints 828
+# print(building_heights["Ping An"]) # Prints 599
 
-##Verifiying an error:
-#powers = {[1, 2, 4, 8, 16]: 2, [1, 3, 9, 27, 81]: 3}
-##print(powers)
+# zodiac_elements = {"water": ["Cancer", "Scorpio", "Pisces"], "fire": ["Aries", "Leo", "Sagittarius"], "earth": ["Taurus", "Virgo", "Capricorn"], "air":["Gemini", "Libra", "Aquarius"]}
+# print(zodiac_elements["earth"])
+# print(zodiac_elements["fire"])
 
-children = {"von Trapp": ["Johannes", "Rosmarie", "Eleonore"] , "Corleone": ["Sonny", "Fredo", "Michael"]}
-print(children)
+# ## Get an Invalid Key
 
-my_empty_dictionary = {}
-print(my_empty_dictionary)
+# building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}
+# print(building_heights["Landmark 81"])
 
-menu = {"oatmeal": 3, "avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2}
-print("Before: ", menu)
-menu["cheesecake"] = 8
-print("After", menu)
-animals_in_zoo = {"dinosaurs": 0}
-animals_in_zoo = {"dinosaurs": 0}
-animals_in_zoo = {"horses": 2}
-print(animals_in_zoo)
+# ##One way to avoid this error is to first check if the key exists in the dictionary:
+# key_to_check = "Landmark 81"
 
+# if key_to_check in building_heights:
+#   print(building_heights["Landmark 81"])
 
-##Add multiple keys
-sensors = {"living room": 21, "kitchen": 23, "bedroom": 20}
-print("Before", sensors)
+# zodiac_elements = {"water": ["Cancer", "Scorpio", "Pisces"], "fire": ["Aries", "Leo", "Sagittarius"], "earth": ["Taurus", "Virgo", "Capricorn"], "air":["Gemini", "Libra", "Aquarius"]}
 
-# #If we wanted to add 3 new rooms, we could use:
-sensors.update({"pantry": 22, "guest room": 25, "patio": 34})
-print("After", sensors)
+# zodiac_elements["energy"] = "Not a Zodiac element"
 
-###
-user_ids = {"teraCoder": 9018293, "proProgrammer": 119238}
-print(user_ids)
-user_ids.update({"theLooper": 138475, "stringQueen": 85739})
-print(user_ids)
+# if "energy" in zodiac_elements:
+#   print(zodiac_elements["energy"])
 
-## Overwrite Values ##
-#We know that we can add a key by using the following syntax:
-menu["banana"] = 3
-menu = {"oatmeal": 3, "avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2}
-print("Before: ", menu)
-menu["oatmeal"] = 5
-print("After", menu)
+# ##Safely Get a Key
+# building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}
 
-## Notice the value of "oatmeal" has now changed to 5.
-oscar_winners = {"Best Picture": "La La Land", "Best Actor": "Casey Affleck", "Best Actress": "Emma Stone", "Animated Feature": "Zootopia"}
-print("Before", oscar_winners)
-print()
-oscar_winners.update({"Supporting Actress": "Viola Davis"})
-print("After1", oscar_winners)
-print()
-oscar_winners["Best Picture"] = "Moonlight"
-print("After2", oscar_winners)
+# #this line will return 632:
+# building_heights.get("Shanghai Tower")
 
+# #this line will return None:
+# building_heights.get("My House")
 
-###Dict Comprehensions
-#Let’s say we have two lists that we want to combine into a 
-#dictionary, like a list of students and a list of their heights, 
-#in inches:
+# ###
+# user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}
+# user_ids.get("teraCoder")
 
-names = ['Jenny', 'Alexus', 'Sam', 'Grace']
-heights = [61, 70, 67, 64]
+# if user_ids.get("teraCoder") == None:
+#    tc_id = 1000
+# else: 
+#    tc_id = user_ids.get("teraCoder")
 
-#Python allows you to create a dictionary using 
-# a dict comprehension, with this syntax:
+# print(tc_id)
 
-zipStudents = zip(names, heights)
-print("zipStudents: ", zipStudents)
+# if user_ids.get("superStackSmash") == None:
+#      stack_id = 100000
 
-students = {key:value for key, value in zip(names, heights)}
-# #students is now {'Jenny': 61, 'Alexus': 70, 'Sam': 67, 'Grace': 64}
-print(students)
+# print(stack_id)
 
-# #zip() combines two lists into an iterator of tuples with the list elements paired together. This dict comprehension:
+# ###Delete a Key
+#.pop() works to delete items from a dictionary, when you know the key value.
+#raffle = {223842: "Teddy Bear", 872921: "Concert Tickets", 320291: "Gift Basket", 412123: "Necklace", 298787: "Pasta Maker"}
+#print(raffle.pop(320291, "No Prize"))
+## Prints "Gift Basket"
+#print(raffle)
+# # Prints {223842: "Teddy Bear", 872921: "Concert Tickets", 412123: "Necklace", 298787: "Pasta Maker"}
+# print(raffle.pop(100000, "No Prize"))
+# # Prints "No Prize"
+# print(raffle)
+# # Prints {223842: "Teddy Bear", 872921: "Concert Tickets", 412123: "Necklace", 298787: "Pasta Maker"}
+# print(raffle.pop(872921, "No Prize"))
+# # Prints "Concert Tickets"
+# print(raffle)
+# # Prints {223842: "Teddy Bear", 412123: "Necklace", 298787: "Pasta Maker"}
 
-drinks = ["espresso", "chai", "decaf", "drip"]
-caffeine = [64, 40, 0, 120]
+# available_items = {"health potion": 10, "cake of the cure": 5, "green elixir": 20, "strength sandwich": 25, "stamina grains": 15, "power stew": 30}
+# health_points = 20
 
-zipped_drinks = zip(drinks, caffeine)
-print(zipped_drinks)
+# health_points += available_items.pop("stamina grains", 0)
+# health_points += available_items.pop("power stew", 0)
+# health_points += available_items.pop("mystic bread", 0)
 
-drinks_to_caffeine = {key:value for key, value in zipped_drinks}
-print(drinks_to_caffeine)
+# print(available_items)
+# print(health_points)
 
-songs = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations"]
-playcounts = [78, 29, 44, 21, 89, 5]
-plays = {key:value for key, value in zip(songs, playcounts)}
-print(plays)
-plays.update({"Purple Haze": 1})
-plays.update({"Respect": 94})
-print("After: ", plays)
-library = {"The Best Songs": plays, "Sunday Feelings": {}}
-print(library)
+# ##Get All Keys
+# test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}
+# print(list(test_scores))
+# # Prints ["Grace", "Jeffrey", "Sylvia", "Pedro", "Martin", "Dina"]
+
+# for student in test_scores.keys():
+#  print(student)
+
+# user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}
+# num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
+
+# users = user_ids.keys()
+# lessons = num_exercises.keys()
+
+# print(users)
+# print(lessons)
+
+##Get All Values
+# test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}
+
+# for score_list in test_scores.values():
+#  print(score_list)
+# num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
+
+# total_exercises = 0
+
+# for exercises in num_exercises.values():
+#   total_exercises += exercises
+# print(total_exercises)
+
+##Get All Items
+# biggest_brands = {"Apple": 184, "Google": 141.7, "Microsoft": 80, "Coca-Cola": 69.7, "Amazon": 64.8}
+
+# for company, value in biggest_brands.items():
+#  print(company + " has a value of " + str(value) + " billion dollars. ")
+
+# pct_women_in_occupation = {"CEO": 28, "Engineering Manager": 9, "Pharmacist": 58, "Physician": 40, "Lawyer": 37, "Aerospace Engineer": 9}
+
+# for occupation, percentage in pct_women_in_occupation.items():
+#   print("Women make up " + str(percentage) + " percent of " + occupation + "s.") 
